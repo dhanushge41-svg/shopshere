@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block abc %}
+<center>
+<h1>Reset page</h1><br><br><br><br>
+{% if messages %}
+    {% for i in messages %}
+    <h2 style="color:red; font-family:cursive;">{{i}}</h2>
+    {% endfor %}
+{% endif %}
+<form action="" method="POST">
+{% csrf_token %}
+
+{% if new %}
+<label for=""> new pasw</label>
+<input type="text"  name="new_pasw" > <br><br>
+<label for="">confirm pasw</label>
+<input type="text" name="confirm_pasw"> <br><br>
+<button type="submit">Reset</button>
+
+{% else %}
+<label for="">Username</label>
+<input type="text" name="uname"> <br><br>
+<button type="submit">submit</button>
+{% endif %}
+
+</form>
+</center>
+{% endblock %}

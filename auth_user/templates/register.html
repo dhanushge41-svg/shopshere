@@ -1,0 +1,140 @@
+{% extends 'main.html' %}
+{% block css %}
+<style>
+    /* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body{
+    background: linear-gradient(135deg, #dddee1, #07000e);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+nav{
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* FORM CONTAINER */
+.register-container{
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+/* FORM */
+form{
+    width: 400px;
+    padding: 35px;
+    background: rgba(7, 7, 7, 0.15);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: black;
+}
+
+/* HEADING */
+form h2{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* LABEL */
+form label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* INPUT */
+form input{
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+form input::placeholder{
+    color: #eee;
+}
+
+form input:focus{
+    background: rgba(255,255,255,0.3);
+    border: 1px solid white;
+}
+
+/* BUTTON */
+form button{
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #764ba2;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover{
+    background: #764ba2;
+    color: white;
+    transform: translateY(-2px);
+}
+</style>
+{% endblock %}
+{% block abc %}
+
+<center> 
+   <h1>Register page</h1> <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Firstname</label>
+        <input type="text" name="fname" id=""> <br><br>
+        <label for="">Lastname</label>
+        <input type="text" name="lname" id=""> <br><br>
+        <label for="">Email</label>
+        <input type="text" name="email" id=""> <br><br>
+        <label for="">Username</label>
+        <input type="text" name="uname" id=""> <br><br>
+        <label for="">Password</label>
+        <input type="text" name="psw" id=""> <br><br>
+        <button type="submit">submit</button>
+    </form>
+    <br><br><br>
+    {% if messages %}
+    {% for i in messages %}
+    <h2 style="color:red; font-family:cursive;">{{i}}</h2>
+    {% endfor %}
+    {% endif %}
+</center>
+{% endblock %}

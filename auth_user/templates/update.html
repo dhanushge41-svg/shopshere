@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% block abc %}
+<center>
+<h1>Update page</h1><br><br><br><br>
+   <form action="" method="POST">
+        {% csrf_token %}
+        
+        <label for="">Firstname</label>
+        <input type="text" name="fname" id="" value="{{data1.first_name}}"> <br><br>
+        <label for="">Lastname</label>
+        <input type="text" name="lname" id="" value="{{data1.last_name}}"> <br><br>
+        <label for="">Email</label>
+        <input type="text" name="email" id="" value="{{data1.email}}"> <br><br>
+        <label for="">Username</label>
+        <input type="text" name="uname" id="" value="{{data1.username}}"> <br><br>
+        
+        <button type="submit">submit</button>
+        
+    </form>
+    
+</center>
+{% endblock %}
+<a href="{% url 'update_image' %}"> update image</a>

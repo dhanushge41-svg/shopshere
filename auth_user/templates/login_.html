@@ -1,0 +1,153 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css %}
+    <style>
+
+    </style>
+{% endblock %}
+{% block abc %}
+
+<center> 
+    <h1>Login Page</h1> <br>
+    {% if messages %}
+        {% for i in messages %}
+        <h2 style="color: red;">{{i}}</h2>
+        {% endfor %}
+    {% endif %} <br><br><br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <label for="">Username</label>
+        <input type="text" name="uname" id="" placeholder="Enter Username"> <br><br>
+        <label for="">Password</label>
+        <input type="text" name="psw" id="" placeholder="Enter Password"> <br><br>
+        <button type="submit">login</button> <br> <br>
+        <a href="{% url 'forget_' %}">Forget password</a>
+
+    </form>
+    <br><br><br>
+    {% if  erorr %}
+    <h2 style="color: red;">Username is already exist</h2>
+    {% endif %}
+   
+</center>
+{% endblock %}
+       /* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body{
+    background: linear-gradient(135deg, #e8eaef, #07000f);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+nav{
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* LOGIN CONTAINER */
+.login-container{
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORM */
+form{
+    width: 360px;
+    padding: 35px;
+    background: rgba(9, 1, 1, 0.15);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #060606;
+}
+
+/* HEADING */
+form h2{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* LABELS */
+form label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* INPUTS */
+form input{
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 15px;
+}
+
+form input::placeholder{
+    color: #eee;
+}
+
+form input:focus{
+    border: 1px solid white;
+    background: rgba(255,255,255,0.3);
+}
+
+/* BUTTON */
+form button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #764ba2;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover{
+    background: #764ba2;
+    color: white;
+}
+
+/* FORGOT PASSWORD */
+form a{
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+form a:hover{
+    text-decoration: underline;
+}

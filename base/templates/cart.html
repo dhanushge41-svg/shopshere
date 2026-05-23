@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% block abc %}
+
+<center>
+    <h1>Cart</h1>
+    <table style="width:100%; border-collapse:collapse; font-family:Arial, sans-serif; margin-top:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); border-radius:10px; overflow:hidden;">
+    
+    <tr style="background-color:#1e293b; color:white; text-align:center;">
+        <th style="padding:14px; border:1px solid #ddd;">Sl No</th>
+        <th style="padding:14px; border:1px solid #ddd;">Product Name</th>
+        <th style="padding:14px; border:1px solid #ddd;">Price</th>
+        <th style="padding:14px; border:1px solid #ddd;">Quantity</th>
+        <th style="padding:14px; border:1px solid #ddd;">Total Price</th>
+        <th style="padding:14px; border:1px solid #ddd;">Action</th>
+    </tr>
+
+    {% for i in cart_product %}
+    <tr style="text-align:center; background-color:#f8fafc;">
+        
+        <td style="padding:12px; border:1px solid #ddd;">
+            {{forloop.counter}}
+        </td>
+
+        <td style="padding:12px; border:1px solid #ddd; font-weight:bold; color:#334155;">
+            {{i.pname}}
+        </td>
+
+        <td style="padding:12px; border:1px solid #ddd; color:#16a34a; font-weight:bold;">
+            ₹{{i.price}}
+        </td>
+
+        <td style="padding:12px; border:1px solid #ddd;">
+
+            <a href="{% url 'decrease' i.id %}" 
+               style="text-decoration:none; background:#ef4444; color:white; padding:5px 10px; border-radius:5px; font-weight:bold; margin-right:8px;">
+               -
+            </a>
+
+            <span style="font-weight:bold; font-size:16px;">
+                Qt.{{i.pqauntity}}
+            </span>
+
+            <a href="{% url 'increase' i.id %}" 
+               style="text-decoration:none; background:#22c55e; color:white; padding:5px 10px; border-radius:5px; font-weight:bold; margin-left:8px;">
+               +
+            </a>
+
+        </td>
+
+        <td style="padding:12px; border:1px solid #ddd; font-weight:bold; color:#0f172a;">
+            ₹{{i.total_price}}
+        </td>
+
+        <td style="padding:12px; border:1px solid #ddd;">
+
+            <a href="{% url 'delete_' i.id %}" 
+               style="text-decoration:none; background:#dc2626; color:white; padding:8px 14px; border-radius:6px; font-weight:bold;">
+               Remove
+            </a>
+
+        </td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+<h1 style="margin-top:25px; text-align:right; color:#0f172a; font-family:Arial, sans-serif;">
+    Total Price : 
+    <span style="color:#16a34a;">₹{{TA}}</span>
+</h1>
+</center>
+
+{% endblock %}

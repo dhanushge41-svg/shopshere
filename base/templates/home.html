@@ -1,0 +1,194 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block css %}
+    <style>
+/* PRODUCT CARD */
+
+.product-card{
+    width:300px;
+    background:#fff;
+
+    margin:120px 20px 20px 20px;
+
+    border-radius:15px;
+    overflow:hidden;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+
+    display:inline-block;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+
+/* IMAGE */
+
+.product-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+/* PRODUCT INFO */
+
+.product-info{
+    padding:18px;
+}
+
+/* PRODUCT NAME */
+
+.product-info h2{
+    font-size:24px;
+    color:#222;
+
+    margin-bottom:10px;
+
+    font-weight:bold;
+
+    text-transform:capitalize;
+}
+
+/* DESCRIPTION */
+
+.product-info p{
+    color:#666;
+
+    font-size:15px;
+
+    margin-bottom:8px;
+
+    line-height:1.5;
+}
+
+/* PRICE STYLE */
+
+.price{
+    font-size:28px;
+
+    color:#28a745;
+
+    font-weight:bold;
+
+    margin:12px 0;
+}
+
+/* CATEGORY */
+
+.category{
+    display:inline-block;
+
+    background:#f1f1f1;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    color:#444;
+
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+
+.product-card button{
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#ff6600;
+
+    transition:0.3s;
+}
+
+.product-card button:hover{
+    background:#e65c00;
+}
+
+.product-card button a{
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+    </style>
+{% endblock %}
+{% block abc %}
+
+
+<center>
+{% if messages %}
+    {% for i in messages %}
+    <h2 style="color: green; font-family:sans-serif; font-size: 2rem;" >{{i}}</h2>
+    {% endfor %}
+{% endif %}
+
+<div class="products-container">
+
+    {% if messages %}
+        {% for i in messages %}
+            {{i}}
+        {% endfor %}
+      
+    {% endif %}
+    {% for i in category %}
+         <form action="">
+            <input type="submit" name="cat" id="" value="{{i}}">
+         </form>
+    {% endfor %}
+
+    
+
+        {% for i in all_products %}
+            {% if trend %}
+              <h2>Trending 🔥</h2>
+            {% endif %}
+            {% if offer %}
+              <h2>90% offer 🔥</h2>
+            {% endif %}
+        <div class="product-card">
+
+            <img src="{{i.pimage.url}}" alt="">
+
+            <div class="product-info">
+
+                <h2>{{i.pname}}</h2>
+
+                <p>{{i.pdesc}}</p>
+
+                <div class="price">
+                    ₹{{i.price}}
+                </div>
+
+                <p>Quantity : {{i.pqauntity}}</p>
+
+                <p class="category">
+                    {{i.pcategory}}
+                </p>
+
+                <button>
+                    <a href="{% url 'addcart' i.id %}">Add To Cart</a>
+                </button>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    
+
+
+</center>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">SHOP HERE</div>
+
+    <ul class="nav-links">
+        {% if nav %}
+      <form action="" style="display: flex; align-items: center; gap: 10px;">
+
+    <input 
+        type="text" 
+        name="q" 
+        placeholder="Search here..."
+        style="
+            padding: 7px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        "
+    >
+
+    <button 
+        type="submit"
+        style="
+            padding: 7px 14px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        "
+    >
+        Search
+    </button>
+
+    <input 
+        type="submit" 
+        name="offer" 
+        value="Offer"
+        style="
+            padding: 7px 14px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        "
+    >
+
+    <input 
+        type="submit" 
+        name="trend" 
+        value="Trend"
+        style="
+            padding: 7px 14px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        "
+    >
+
+</form> <br>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'cart' %}">Cart({{cart_products}})</a></li>
+        <li><a href="{% url 'profile_' %}">Profile({{request.user.username}})</a></li>
+        <li><a href="#">KnowUs</a></li>
+        <li><a href="{% url 'logout_' %}">Logout</a></li>
+        <li><a href="">Support</a></li> 
+        {% else %}
+        <li><a href="#">KnowUs</a></li>
+        <li><a href="">Support</a></li> 
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'login_' %}">Login</a></li>
+        <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+
+        
+     
+        
+    </ul>
+</nav>
+</body>
+</html>
