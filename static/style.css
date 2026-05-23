@@ -1,52 +1,64 @@
 /* =========================
-   NAVBAR BASE
+   NAVBAR
 ========================= */
+
 nav {
     position: sticky;
     top: 0;
+
     width: 100%;
-    height: 90px;
+    min-height: 80px;
+
     background: linear-gradient(90deg, #000428, #004e92);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 50px;
+    padding: 15px 40px;
+
     box-sizing: border-box;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
     z-index: 1000;
 }
 
 /* LOGO */
+
 nav .logo {
     color: white;
-    font-size: 42px;
+    font-size: 38px;
     font-weight: bold;
     letter-spacing: 2px;
     font-family: Arial, sans-serif;
-    white-space: nowrap;
 }
 
 /* MENU */
+
 nav ul {
     list-style: none;
+
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 20px;
+
     margin: 0;
     padding: 0;
+}
+
+nav ul li {
+    margin: 0;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
 
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
 
-    padding: 10px 15px;
+    padding: 10px 16px;
     border-radius: 8px;
 
     transition: 0.3s ease;
@@ -59,18 +71,17 @@ nav ul li a:hover {
 
 
 /* =========================
-   LAPTOP RESPONSIVE
-   (1024px and below)
+   LAPTOP
 ========================= */
+
 @media (max-width: 1024px) {
 
     nav {
-        height: 80px;
-        padding: 0 30px;
+        padding: 15px 25px;
     }
 
     nav .logo {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     nav ul {
@@ -78,61 +89,61 @@ nav ul li a:hover {
     }
 
     nav ul li a {
-        font-size: 20px;
+        font-size: 18px;
         padding: 8px 12px;
     }
 }
 
 
 /* =========================
-   TABLET RESPONSIVE
-   (768px and below)
+   MOBILE
 ========================= */
+
 @media (max-width: 768px) {
 
     nav {
-        height: auto;
         flex-direction: column;
-        padding: 20px;
+        align-items: center;
+
+        padding: 15px 10px;
     }
 
     nav .logo {
-        font-size: 30px;
+        font-size: 28px;
         margin-bottom: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 18px;
-        padding: 8px 10px;
-    }
-}
-
-
-/* =========================
-   MOBILE RESPONSIVE
-   (480px and below)
-========================= */
-@media (max-width: 480px) {
-
-    nav {
-        padding: 15px;
-    }
-
-    nav .logo {
-        font-size: 24px;
         text-align: center;
     }
 
     nav ul {
         width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    nav .logo {
+        font-size: 24px;
+    }
+
+    nav ul {
         flex-direction: column;
-        gap: 8px;
+        width: 100%;
     }
 
     nav ul li {
@@ -144,34 +155,9 @@ nav ul li a:hover {
         display: block;
         width: 100%;
 
-        font-size: 16px;
-        padding: 10px;
-    }
-}
+        font-size: 15px;
 
-
-/* =========================
-   TV / LARGE SCREEN
-   (1600px and above)
-========================= */
-@media (min-width: 1600px) {
-
-    nav {
-        height: 120px;
-        padding: 0 80px;
-    }
-
-    nav .logo {
-        font-size: 60px;
-    }
-
-    nav ul {
-        gap: 30px;
-    }
-
-    nav ul li a {
-        font-size: 32px;
-        padding: 14px 22px;
+        box-sizing: border-box;
     }
 }
 
