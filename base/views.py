@@ -43,7 +43,8 @@ def home(request):
             category += [i.pcategory]
         
 
-    return render(request, 'home.html', {'all_products': all_products,'category':category,'offer':offer,'trend':trend,'nav':True})
+    return render(request, 'home.html', {'all_products': all_products,'category':category,'offer':offer,'trend':trend,'nav':True,'cart_products':
+    cart_products  })
 @login_required(login_url='login_')
 def cart (request):
     cart_products = cartmodel.objects.filter(host=request.user).count()
