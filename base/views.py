@@ -11,7 +11,7 @@ def home(request):
     offer = False
     trend = False
     
-    
+    cart_products = cartmodel.objects.filter(host=request.user).count()
     q = request.GET.get('q')
     
     if q:
