@@ -89,3 +89,9 @@ def delete_(request,pk):
     cp = cartmodel.objects.get(id=pk).delete()
     return redirect(cart)
 
+def knowus(request):
+  
+    return render(request,'knowus.html')
+def support (request):
+    return render(request,'support.html')
+
