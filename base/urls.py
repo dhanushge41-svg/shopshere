@@ -7,5 +7,7 @@ urlpatterns =[
     path('addcart/<int:pk>',addcart,name='addcart'),
     path('increase/<int:pk>',increase,name='increase'),
     path('decrease/<int:pk>',decrease,name='decrease'),
-    path('delete_/<int:pk>',delete_,name='delete_')
+    path('delete_/<int:pk>',delete_,name='delete_'),
+    path('knowus/',knowus,name='knowus'),
+    path('support/',support,name='support')
 ]
