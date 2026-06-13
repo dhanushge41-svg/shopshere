@@ -1,0 +1,275 @@
+{% extends 'main.html' %}
+{% block css %}
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+    color:white;
+    line-height:1.6;
+}
+
+/* Hero */
+
+.hero{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.1rem;
+}
+
+/* Section Common */
+
+section{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:50px 0;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* Support Info */
+
+.support-info{
+    text-align:center;
+}
+
+.support-info p{
+    max-width:800px;
+    margin:auto;
+}
+
+/* Contact Cards */
+
+.contact-options{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.2);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* FAQ */
+
+.faq-item{
+    background:rgba(255,255,255,0.12);
+    margin-bottom:20px;
+    padding:25px;
+    border-radius:15px;
+}
+
+.faq-item h3{
+    margin-bottom:10px;
+    color:#ffd700;
+}
+
+/* Support Hours */
+
+.hours-box{
+    background:rgba(255,255,255,0.12);
+    padding:30px;
+    text-align:center;
+    border-radius:20px;
+}
+
+/* Contact Form */
+
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+.contact-form button{
+    background:#ffd700;
+    color:black;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    background:white;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero{
+        padding:70px 15px;
+    }
+}
+    </style>
+{% endblock %}
+{% block abc %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Shop Here</title>
+    <link rel="stylesheet" href="support.css">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Customer Support</h1>
+            <p>We're here to help you with orders, payments, returns, and account-related queries.</p>
+        </div>
+    </section>
+
+    <section class="support-info">
+        <h2>How Can We Help You?</h2>
+        <p>
+            At Shop Here, customer satisfaction is our top priority.
+            Our support team is available to assist you with any questions,
+            concerns, or issues regarding your shopping experience.
+        </p>
+    </section>
+
+    <section class="contact-options">
+
+        <div class="card">
+            <h3>📞 Call Us</h3>
+            <p>+91 98765 43210</p>
+            <p>Mon - Sat, 9 AM - 8 PM</p>
+        </div>
+
+        <div class="card">
+            <h3>📧 Email Support</h3>
+            <p>support@shophere.com</p>
+            <p>24/7 Response Assistance</p>
+        </div>
+
+        <div class="card">
+            <h3>💬 Live Chat</h3>
+            <p>Available through the Shop Here App</p>
+            <p>Fast & Instant Support</p>
+        </div>
+
+    </section>
+
+    <section class="faq">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>How can I track my order?</h3>
+            <p>
+                Go to "My Orders" and select your order to view real-time tracking information.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I cancel an order?</h3>
+            <p>
+                Orders can be cancelled before shipment from the "My Orders" section.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I return a product?</h3>
+            <p>
+                Visit the order details page and select "Return Product" if eligible.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>When will my refund be processed?</h3>
+            <p>
+                Refunds are usually processed within 5-7 business days after approval.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="support-hours">
+
+        <h2>Support Hours</h2>
+
+        <div class="hours-box">
+            <p>Monday - Friday : 9:00 AM - 8:00 PM</p>
+            <p>Saturday : 10:00 AM - 6:00 PM</p>
+            <p>Sunday : Limited Support</p>
+        </div>
+
+    </section>
+
+    <section class="contact-form">
+
+        <h2>Send Us a Message</h2>
+
+        <form>
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <input type="text" placeholder="Subject" required>
+
+            <textarea rows="6" placeholder="Describe your issue..." required></textarea>
+
+            <button type="submit">Submit Request</button>
+
+        </form>
+
+    </section>
+
+</body>
+</html>
+{% endblock %}
