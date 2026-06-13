@@ -75,12 +75,12 @@
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'cart' %}">Cart({{cart_products}})</a></li>
         <li><a href="{% url 'profile_' %}">Profile({{request.user.username}})</a></li>
-        <li><a href="#">KnowUs</a></li>
+        <li><a href="{% url 'knowus' %}">KnowUs</a></li>
         <li><a href="{% url 'logout_' %}">Logout</a></li>
-        <li><a href="">Support</a></li> 
+        <li><a href="{% url 'support' %}">Support</a></li> 
         {% else %}
-        <li><a href="#">KnowUs</a></li>
-        <li><a href="">Support</a></li> 
+        <li><a href="{% url 'knowus' %}">KnowUs</a></li>
+        <li><a href="{% url 'support' %}">Support</a></li> 
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'login_' %}">Login</a></li>
         <li><a href="{% url 'register' %}">Register</a></li>
