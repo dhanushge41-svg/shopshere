@@ -1,0 +1,444 @@
+{% extends 'main.html' %}
+{% block css %}
+    <style>
+        /* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    line-height:1.7;
+    color:#ffffff;
+    background: linear-gradient(
+        135deg,
+        #667eea 0%,
+        #764ba2 50%,
+        #6a11cb 100%
+    );
+    min-height:100vh;
+}
+
+/* Container */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Hero Section */
+
+.hero{
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-weight:800;
+    margin-bottom:15px;
+    text-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero p{
+    font-size:1.2rem;
+    max-width:700px;
+    margin:auto;
+    opacity:0.9;
+}
+
+/* Common Section */
+
+section{
+    padding:70px 0;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:2.2rem;
+    font-weight:700;
+    color:#fff;
+}
+
+/* Glass Cards */
+
+.card,
+.box,
+.value-card,
+.team-card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.15);
+    transition:all 0.4s ease;
+}
+
+.card:hover,
+.box:hover,
+.value-card:hover,
+.team-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* About */
+
+.about p,
+.story p,
+.closing p,
+.team-text{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    font-size:1.05rem;
+}
+
+/* Story */
+
+.card{
+    padding:40px;
+}
+
+/* Mission Vision */
+
+.flex{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.box{
+    flex:1;
+    min-width:300px;
+    padding:35px;
+    text-align:center;
+}
+
+/* Values */
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.value-card{
+    padding:30px;
+    text-align:center;
+}
+
+.value-card h3{
+    margin-bottom:15px;
+    color:#ffd700;
+    font-size:1.3rem;
+}
+
+.value-card p{
+    color:#f1f1f1;
+}
+
+/* Statistics */
+
+.stats{
+    margin:50px 0;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+}
+
+.stats-grid div{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.stats-grid h2{
+    font-size:3rem;
+    color:#ffd700;
+    margin-bottom:10px;
+}
+
+.stats-grid p{
+    font-size:1rem;
+}
+
+/* Team */
+
+.team{
+    text-align:center;
+}
+
+.team-text{
+    margin-bottom:40px;
+}
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.team-card{
+    padding:30px;
+}
+
+.team-card img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid rgba(255,255,255,0.4);
+    margin-bottom:20px;
+}
+
+.team-card h3{
+    margin-bottom:5px;
+    font-size:1.3rem;
+}
+
+.team-card p{
+    color:#ddd;
+}
+
+/* Closing */
+
+.closing{
+    text-align:center;
+    padding-bottom:100px;
+}
+
+.closing h2{
+    margin-bottom:20px;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#5b4ab8;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ffffff;
+    border-radius:10px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .hero{
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    section{
+        padding:50px 0;
+    }
+
+    section h2{
+        font-size:1.8rem;
+    }
+
+    .box{
+        min-width:100%;
+    }
+}
+
+    </style>
+{% endblock %}
+{% block abc %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Us - Shop Here</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Know Us</h1>
+            <p>Your Trusted Shopping Partner for Quality, Convenience, and Value.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>Who We Are</h2>
+            <p>
+                Welcome to <strong>Shop Here</strong>, your one-stop destination for a seamless online shopping experience.
+                We are dedicated to bringing high-quality products, competitive prices, and exceptional customer service
+                together on a single platform. Whether you're shopping for fashion, electronics, home essentials, or lifestyle
+                products, Shop Here makes online shopping simple, secure, and enjoyable.
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="container">
+            <div class="card">
+                <h2>Our Story</h2>
+                <p>
+                    Shop Here was founded with a vision to transform the way people shop online.
+                    We recognized the need for a platform that combines convenience, reliability,
+                    and affordability. Since our inception, we have focused on connecting customers
+                    with trusted products and delivering an outstanding digital shopping experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container flex">
+            <div class="box">
+                <h2>Our Mission</h2>
+                <p>
+                    To provide customers with a reliable online marketplace that offers quality products,
+                    secure transactions, and fast delivery while maintaining exceptional customer satisfaction.
+                </p>
+            </div>
+
+            <div class="box">
+                <h2>Our Vision</h2>
+                <p>
+                    To become the most trusted and customer-centric shopping platform by continuously
+                    innovating and delivering value-driven experiences worldwide.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="values">
+        <div class="container">
+            <h2>Our Core Values</h2>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>Customer First</h3>
+                    <p>Every decision we make starts with our customers' needs and satisfaction.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Quality Assurance</h3>
+                    <p>We carefully select products to ensure quality, authenticity, and value.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Trust & Transparency</h3>
+                    <p>We build lasting relationships through honesty, integrity, and transparency.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We embrace technology to create better and more convenient shopping experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div>
+                <h2>50K+</h2>
+                <p>Happy Customers</p>
+            </div>
+
+            <div>
+                <h2>10K+</h2>
+                <p>Products Available</p>
+            </div>
+
+            <div>
+                <h2>500+</h2>
+                <p>Trusted Sellers</p>
+            </div>
+
+            <div>
+                <h2>99%</h2>
+                <p>Customer Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <p class="team-text">
+                Behind Shop Here is a passionate team of innovators, developers, designers,
+                and customer support professionals dedicated to making your shopping journey exceptional.
+            </p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/150" alt="Team Member">
+                    <h3>John Smith</h3>
+                    <p>Founder & CEO</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/150" alt="Team Member">
+                    <h3>Sarah Johnson</h3>
+                    <p>Operations Manager</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/150" alt="Team Member">
+                    <h3>David Lee</h3>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="closing">
+        <div class="container">
+            <h2>Thank You for Choosing Shop Here</h2>
+            <p>
+                We are committed to providing a secure, reliable, and enjoyable shopping experience.
+                Your trust inspires us to improve every day and continue delivering the best products and services.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
+{% endblock %}
