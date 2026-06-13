@@ -142,11 +142,28 @@
         {% endfor %}
       
     {% endif %}
+    <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
     {% for i in category %}
-         <form action="">
-            <input type="submit" name="cat" id="" value="{{i}}">
-         </form>
+    <form action="">
+        <input
+            type="submit"
+            name="cat"
+            value="{{i}}"
+            style="
+                background: linear-gradient(135deg,#ff7b00,#ffb347);
+                color:white;
+                border:none;
+                padding:10px 22px;
+                border-radius:25px;
+                font-weight:bold;
+                font-size:15px;
+                cursor:pointer;
+                box-shadow:0 4px 12px rgba(255,123,0,0.4);
+            ">
+    </form>
     {% endfor %}
+</div>
+
 
     
 
