@@ -116,7 +116,7 @@ def forget(request):
             return redirect(forget)
             
         
-    return render(request,'forgot.html')
+    return render(request,'forgot_.html')
 def reset_pasw(request):
     data = User.objects.get(username = request.user)
     if request.method == 'POST':
